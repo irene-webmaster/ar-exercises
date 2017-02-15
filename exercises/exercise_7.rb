@@ -11,6 +11,8 @@ puts "----------"
 
 # Your code goes here ...
 print "Please enter a store name "
-store_name = gets.chomp
+store_name = gets.chomp.force_encoding('UTF-8')
 
-Store.create(name: "#{store_name}", annual_revenue: nil, mens_apparel: nil, womens_apparel: nil)
+invalid_store = Store.create(name: "#{store_name}", annual_revenue: nill, mens_apparel: false, womens_apparel: false)
+
+puts invalid_store.errors.full_messages
