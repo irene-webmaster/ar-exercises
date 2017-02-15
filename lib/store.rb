@@ -14,8 +14,8 @@ class Store < ActiveRecord::Base
 
   def carry_at_least_one_of_the_apparel
     if mens_apparel == false && womens_apparel == false
-      errors.add(:mens_apparel, "You must carry at least one of the apparel")
-      errors.add(:womens_apparel, "You must carry at least one of the apparel")
+      errors.add(:mens_apparel, "must carry at least one of the men's or women's apparel")
+      errors.add(:womens_apparel, "must carry at least one of the men's or women's apparel")
     end
   end
 
